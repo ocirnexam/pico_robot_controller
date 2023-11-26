@@ -3,9 +3,7 @@
 #include "pico/stdlib.h"
 #include "hardware/adc.h"
 
-bool direction = true;
 float degree = 90;
-int servoPin = 15;
 
 float adc_to_degree(float analog_in)
 {
