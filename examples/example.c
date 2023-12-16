@@ -1,4 +1,4 @@
-#include "servo.h"
+#include "axis/axis.h"
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/adc.h"
@@ -12,10 +12,9 @@ float adc_to_degree(float analog_in)
 
 int main()
 {
-    Servo servo = {.pin = 15, .min_width = 500, .max_width = 2500};
     stdio_init_all();
     printf("ADC Example, measuring GPIO27\n");
-    Servo_Init(servo, degree);
+    Axis_Init(AXIS_0);
     adc_init();
     adc_gpio_init(27);
     // Select ADC input 1 (GPIO27)
@@ -25,7 +24,7 @@ int main()
         uint16_t result = adc_read();
         degree = adc_to_degree(result);
         // printf("Raw value: %d, milliseconds: %f usec\n", result, usec);
-        Servo_Write(servo, degree);
+        Axis_Move(AXIS_0, degree);
         sleep_ms(10);
     }
 }

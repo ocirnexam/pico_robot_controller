@@ -19,7 +19,7 @@ void Servo_Write(Servo servo, float degree)
     pwm_set_gpio_level(servo.pin, (usec/20000.f)*wrap);
 }
 
-void Servo_Init(Servo servo, float start_usec)
+uint8_t Servo_Init(Servo servo)
 {
     gpio_set_function(servo.pin, GPIO_FUNC_PWM);
     uint slice_num = pwm_gpio_to_slice_num(servo.pin);
@@ -37,6 +37,6 @@ void Servo_Init(Servo servo, float start_usec)
     pwm_config_set_wrap(&config, wrap);
 
     pwm_init(slice_num, &config, true);
-
-    Servo_Write(servo, start_usec);
+    Servo_Write(servo, 0);
+    return 1;
 }
