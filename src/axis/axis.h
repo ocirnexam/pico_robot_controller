@@ -12,5 +12,6 @@
 
 uint8_t Axis_Init(uint8_t axis);
 void Axis_Move(uint8_t axis, uint8_t degree);
+uint8_t Axis_GetPosition(uint8_t axis);
 
 #endif
