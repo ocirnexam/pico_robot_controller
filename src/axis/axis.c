@@ -5,11 +5,11 @@ typedef struct {
     Servo servo;
 } Axis;
 
-static Axis axis_array[5] = {{.current_degree = 0, .servo = {.pin = 15, .min_width = 500, .max_width = 2500}}, 
-                             {.current_degree = 0, .servo = {.pin = 15, .min_width = 500, .max_width = 2500}}, 
-                             {.current_degree = 0, .servo = {.pin = 15, .min_width = 500, .max_width = 2500}},
-                             {.current_degree = 0, .servo = {.pin = 15, .min_width = 500, .max_width = 2500}},
-                             {.current_degree = 0, .servo = {.pin = 15, .min_width = 500, .max_width = 2500}}};
+static Axis axis_array[5] = {{.current_degree = 0, .servo = {.pin = 10, .min_width = 500, .max_width = 2500}}, 
+                             {.current_degree = 0, .servo = {.pin = 11, .min_width = 500, .max_width = 2500}}, 
+                             {.current_degree = 0, .servo = {.pin = 12, .min_width = 500, .max_width = 2500}},
+                             {.current_degree = 0, .servo = {.pin = 13, .min_width = 500, .max_width = 2500}},
+                             {.current_degree = 0, .servo = {.pin = 14, .min_width = 500, .max_width = 2500}}};
 
 uint8_t Axis_Init(uint8_t axis)
 {
